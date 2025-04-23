@@ -90,7 +90,7 @@ public class ControlPanel extends JPanel {
     /**
      * Given an array of T and list of SortEvent<T> objects, apply those evens the list in order
      * 
-     * @param <T>
+     * @param <T>    Type T
      * @param l      array: That events are being applied to
      * @param events list: The list of events
      */
@@ -152,20 +152,10 @@ public class ControlPanel extends JPanel {
                 }
                 isSorting = true;
 
-                // TODO: fill me in!
-                // 1. Create the sorting events list
-                // 2. Add in the compare events to the end of the list
                 Integer[] unsortedNotes = Arrays.copyOf(notes.getNotes(), 
                 notes.getNotes().length);
                 List<SortEvent<Integer>> events = 
                     generateEvents(sorts.getSelectedItem().toString(), unsortedNotes);
-                // events = eventSortInt(events, generateEvents("Bubble", imageArr));
-
-                // NOTE: The Timer class repetitively invokes a method at a
-                // fixed interval. Here we are specifying that method
-                // by creating an _anonymous subclass_ of the TimeTask
-                // class. You can interpret the run() method as the
-                // method that fires on every "tick" of the program.
                 Timer timer = new Timer();
                 timer.schedule(new TimerTask() {
                     private int index = 0;
@@ -174,11 +164,7 @@ public class ControlPanel extends JPanel {
                     public void run() {
                         if (index < events.size()) {
                             SortEvent<Integer> e = events.get(index++);
-                            // TODO: fill me in!
-                            // 1. Apply the next sort event.
                             e.apply(notes.getNotes());
-                            // 3. Play the corresponding notes denoted by the
-                            // affected indices logged in the event.
                             scale.playNote(e.getAffectedIndices().get(0),
                                     notes.isHighlighted(e.getAffectedIndices().get(0)));
                             notes.highlightNote(e.getAffectedIndices().get(0));
@@ -187,8 +173,6 @@ public class ControlPanel extends JPanel {
                                         notes.isHighlighted(e.getAffectedIndices().get(1)));
                                 notes.highlightNote(e.getAffectedIndices().get(1));
                             }
-                            // 4. Highlight those affected indices.
-
                             panel.repaint();
                         } else {
                             this.cancel();

@@ -39,7 +39,9 @@ public class ArrayPanel extends JPanel {
         g.setColor(Color.WHITE);
         g.fillRect(0, 0, WIDTH, HEIGHT);
         while (i < total) {
-            if (i % 4 == 0) {
+            if (notes.isHighlighted(i)) {
+                g.setColor(Color.RED);
+            } else if (i % 4 == 0) {
                 g.setColor(Color.GREEN);
             } else if (i % 4 == 1) {
                 g.setColor(Color.CYAN);
@@ -53,5 +55,6 @@ public class ArrayPanel extends JPanel {
                     (notes.getNotes()[i] + 1) * constHeight);
             i++;
         }
+        notes.clearAllHighlighted();
     }
 }

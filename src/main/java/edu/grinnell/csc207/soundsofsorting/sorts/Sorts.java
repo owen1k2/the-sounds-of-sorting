@@ -135,7 +135,7 @@ public class Sorts<T> {
     /**
      * A helper function to sort the broken down lists for merge sort.
      * 
-     * @param <T>
+     * @param <T>    Type T
      * @param arr    : The array being sorted
      * @param hiOne  int: the right side of the first array
      * @param lowOne int: the left side of the first array
@@ -169,7 +169,7 @@ public class Sorts<T> {
     /**
      * A helper functions that breaks the main list down into a bunch of lists
      * 
-     * @param <T>
+     * @param <T>    Type T
      * @param arr    : The array being sorted
      * @param hi     int: the right side of the array
      * @param low    int: the left side of the array
@@ -205,7 +205,7 @@ public class Sorts<T> {
     /**
      * Finds the median value for quick sort
      * 
-     * @param <T>
+     * @param <T>    Type T
      * @param arr    : The array being sorted
      * @param hi     int: The right side of the array
      * @param low    int: The left side of the array
@@ -309,7 +309,7 @@ public class Sorts<T> {
     /**
      * Given an array of T and list of SortEvent<T> objects, apply those evens to the list in order
      * 
-     * @param <T>
+     * @param <T>    Type T
      * @param l      array: That events are being applied to
      * @param events list: The list of events
      */

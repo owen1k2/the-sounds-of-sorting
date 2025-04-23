@@ -2,6 +2,10 @@
 
 Author: Owen Block
 
+## Changelog
+
+*   Updated to highlight highlighted bars throughout sorting.
+
 ## Resources
 
 *   Java 17.0.14
